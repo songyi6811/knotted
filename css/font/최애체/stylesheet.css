@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'YOnepick';
+    src: url('font/최애체/YOnepick-Regular.eot');
+    src: url('font/최애체/YOnepick-Regular.eot?#iefix') format('embedded-opentype'),
+        url('font/최애체/YOnepick-Regular.woff2') format('woff2'),
+        url('font/최애체/YOnepick-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'YOnepick';
+    src: url('font/최애체/YOnepick-Bold.eot');
+    src: url('font/최애체/YOnepick-Bold.eot?#iefix') format('embedded-opentype'),
+        url('font/최애체/YOnepick-Bold.woff2') format('woff2'),
+        url('font/최애체/YOnepick-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Y Onepick TTF';
+    src: url('font/최애체/YOnepickTTF-Bold.eot');
+    src: url('font/최애체/YOnepickTTF-Bold.eot?#iefix') format('embedded-opentype'),
+        url('font/최애체/YOnepickTTF-Bold.woff2') format('woff2'),
+        url('font/최애체/YOnepickTTF-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Y Onepick TTF';
+    src: url('font/최애체/YOnepickTTF-Regular.eot');
+    src: url('font/최애체/YOnepickTTF-Regular.eot?#iefix') format('embedded-opentype'),
+        url('font/최애체/YOnepickTTF-Regular.woff2') format('woff2'),
+        url('font/최애체/YOnepickTTF-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>노티드 리디자인</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="lib/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+
+            //2차 menu
+            $('.pc_menu>li').mouseover(function () {
+                $('.pc_depth02').stop().slideDown(300);
+                $('.pc_menu_bg').stop().slideDown(300);
+            }).mouseout(function () {
+                $('.pc_depth02').stop().slideUp(300);
+                $('.pc_menu_bg').stop().slideUp(300);
+            });
+
+            let menuBtn = document.querySelector('.menu_btn');
+            let mobileNav = document.querySelector('.mobile_nav'); //.mobile_nav            
+
+            //menuBtn을 클릭했을 때 이벤트 실행
+            menuBtn.addEventListener('click', () => {
+                //2. mobileNav한테 클래스명 active 추가/삭제
+                mobileNav.classList.toggle('active');
+            });
+            $('.mobile_nav .mobile_menu>li').click(function () {
+                $('.mobile_nav .mobile_depth02').stop().slideToggle(300);
+                $('.bg').stop().slideDown(300);
+            })
+
+            //main_visual
+            var swiper = new Swiper(".main_visual-Swiper", {
+                spaceBetween: 30,
+                centeredSlides: true,
+                loop: true,
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                }
+            });
+
+            //main_new_menu
+            var bullet = ['메리 피스타치오 트리', '허그 미! 스노우맨', '나 홀로 산타 슈가베어', '눈사람 스마일'];
+
+            var swiper = new Swiper(".new_menu_main-Swiper", {
+                slidesPerView: 3,
+                spaceBetween: 30,
+                pagination: {
+                    el: '.main_new_menu ul',
+                    clickable: true,
+                    renderBullet: function (index, className) {
+                        return '<li class="' + className + '">' + (bullet[index]) + '</li>';
+                    }
+                },
+                loop: true,
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                }
+
+            });
+
+            //sub_new_menu
+            var swiper = new Swiper(".new_menu_sub-Swiper", {
+                slidesPerView: 5,
+                spaceBetween: 28,
+                loop: true,
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                breakpoints: {
+                    300: {
+                        slidesPerView: 4,
+                        spaceBetween: 16,
+                    },
+                    744: {
+                        slidesPerView: 4,
+                        spaceBetween: 28,
+                    },
+                    800: {
+                        slidesPerView: 4,
+                        spaceBetween: 28,
+                    },
+                    1250: {
+                        slidesPerView: 5,
+                        spaceBetween: 28,
+                    },
+                    1440: {
+                        slidesPerView: 5,
+                        spaceBetween: 28,
+                    }
+                },
+            });
+
+            //event
+            var swiper = new Swiper(".event-Swiper", {
+                slidesPerView: 4,
+                spaceBetween: 16,
+                loop: true,
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                breakpoints: {
+                    414: {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 40,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 50,
+                    },
+                    1440: {
+                        slidesPerView: 4,
+                        spaceBetween: 16,
+                    }
+                },
+            });
+
+            //insta
+            var swiper = new Swiper(".insta-Swiper", {
+                slidesPerView: 8,
+                spaceBetween: 16,
+                loop: true,
+                autoplay: {
+                    delay: 1500,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                breakpoints: {
+                    414: {
+                        slidesPerView: 4,
+                        spaceBetween: 28,
+                    },
+                    800: {
+                        slidesPerView: 4,
+                        spaceBetween: 28,
+                    },
+                    1000: {
+                        slidesPerView: 6,
+                        spaceBetween: 28,
+                    },
+                    1250: {
+                        slidesPerView: 8,
+                        spaceBetween: 16,
+                    }
+                },
+            });
+        });//script end
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="pc_menu_bg"></div>
+        <div class="inner">
+            <div class="pc">
+                <h1>
+                    <a href="#"><img src="img/logo.png" alt="logo img"></a>
+                </h1>
+                <nav class="nav">
+                    <ul class="pc_menu">
+                        <li><a href="#" class="depth01">Menu</a>
+                            <ul class="pc_depth02">
+                                <li><a href="#">메뉴소개</a></li>
+                            </ul><!-- .depth02 end -->
+                        </li>
+                        <li><a href="#" class="depth01">Reservation</a>
+                            <ul class="pc_depth02">
+                                <li><a href="#">픽업 예약</a></li>
+                                <li><a href="#">대량 주문</a></li>
+                                <li><a href="#">매장 안내</a></li>
+                            </ul><!-- .depth02 end -->
+                        </li>
+                        <li><a href="#" class="depth01">Online Shop</a>
+                            <ul class="pc_depth02">
+                                <li><a href="#">푸드</a></li>
+                                <li><a href="#">리빙</a></li>
+                            </ul><!-- .depth02 end -->
+                        </li>
+                        <li><a href="#" class="depth01">Event</a>
+                            <ul class="pc_depth02">
+                                <li><a href="#">이벤트</a></li>
+                                <li><a href="#">공지사항</a></li>
+                            </ul><!-- .depth02 end -->
+                        </li>
+                        <li><a href="#" class="depth01">Help</a>
+                            <ul class="pc_depth02">
+                                <li><a href="#">자주 묻는 질문</a></li>
+                                <li><a href="#">1:1 문의</a></li>
+                            </ul><!-- .depth02 end -->
+                        </li>
+                        <li><a href="#" class="depth01">Brand</a>
+                            <ul class="pc_depth02">
+                                <li><a href="#">스토리</a></li>
+                                <li><a href="#">채용안내</a></li>
+                                <li><a href="#">제안하기</a></li>
+                            </ul><!-- .depth02 end -->
+                        </li>
+                    </ul><!-- .menu end -->
+                </nav><!-- .nav end -->
+                <ul class="icon">
+                    <li><a href="#"><img src="img/아이콘2.png" alt="header icon 1"></a></li>
+                    <li><a href="#"><img src="img/아이콘1.png" alt="header icon 2"></a></li>
+                </ul><!-- .icon end -->
+            </div><!-- .pc end -->
+            <div class="mobile">
+                <a href="#" class="menu_btn">
+                    <img src="img/아이콘3.png" alt="menu icon">
+                </a>
+
+                <h1>
+                    <a href="#">
+                        <img src="img/logo.png" alt="logo">
+                    </a>
+                </h1>
+
+                <div class="icon">
+                    <a href="#">
+                        <img src="img/아이콘2.png" alt="header icon 1">
+                    </a>
+                    <a href="#">
+                        <img src="img/아이콘1.png" alt="header icon 2">
+                    </a>
+                </div>
+            </div><!-- .mobile -->
+            <nav class="mobile_nav mobile">
+                <ul class="mobile_menu">
+                    <li><a href="#" class="depth01">Menu</a>
+                        <ul class="mobile_depth02">
+                            <li><a href="#">메뉴소개</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li>
+                    <li><a href="#" class="depth01">Reservation</a>
+                        <ul class="mobile_depth02">
+                            <li><a href="#">픽업 예약</a></li>
+                            <li><a href="#">대량 주문</a></li>
+                            <li><a href="#">매장 안내</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li>
+                    <li><a href="#" class="depth01">Online Shop</a>
+                        <ul class="mobile_depth02">
+                            <li><a href="#">푸드</a></li>
+                            <li><a href="#">리빙</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li>
+                    <li><a href="#" class="depth01">Event</a>
+                        <ul class="mobile_depth02">
+                            <li><a href="#">이벤트</a></li>
+                            <li><a href="#">공지사항</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li>
+                    <li><a href="#" class="depth01">Help</a>
+                        <ul class="mobile_depth02">
+                            <li><a href="#">자주 묻는 질문</a></li>
+                            <li><a href="#">1:1 문의</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li>
+                    <li><a href="#" class="depth01">Brand</a>
+                        <ul class="mobile_depth02">
+                            <li><a href="#">스토리</a></li>
+                            <li><a href="#">채용안내</a></li>
+                            <li><a href="#">제안하기</a></li>
+                        </ul><!-- .depth02 end -->
+                    </li>
+                </ul><!-- .menu end -->
+            </nav><!-- .mobile_nav mobile end -->
+        </div><!-- .inner end -->
+    </header>
+
+    <section class="main_visual">
+        <div class="swiper main_visual-Swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="#"><img src="img/메인비주얼1.jpg" alt="main_visual img01"></a>
+                    <a href="#"><img src="img/테블릿-main_visual-img01.png" alt="main_visual img01"></a>
+                </div><!-- .swiper-slide end -->
+                <div class="swiper-slide">
+                    <a href="#"><img src="img/메인비주얼2.png" alt="main_visual img02"></a>
+                    <a href="#"><img src="img/테블릿-main_visual-img02.png" alt="main_visual img02"></a>
+                </div><!-- .swiper-slide end -->
+                <div class="swiper-slide">
+                    <a href="#"><img src="img/메인비주얼3.png" alt="main_visual img03"></a>
+                    <a href="#"><img src="img/테블릿-main_visual-img03.png" alt="main_visual img03"></a>
+                </div><!-- .swiper-slide end -->
+                <div class="swiper-slide">
+                    <a href="#"><img src="img/메인비주얼4.png" alt="main_visual img04"></a>
+                    <a href="#"><img src="img/테블릿-main_visual-img04.png" alt="main_visual img4"></a>
+                </div><!-- .swiper-slide end -->
+                <div class="swiper-slide">
+                    <a href="#"><img src="img/메인비주얼5.png" alt="main_visual img05"></a>
+                    <a href="#"><img src="img/테블릿-main_visual-img05.png" alt="main_visual img5"></a>
+                </div><!-- .swiper-slide end -->
+            </div><!-- .swiper-wrappe end -->
+            <div class="swiper-pagination"></div>
+        </div><!-- .swiper end -->
+    </section><!-- .main_visual end -->
+
+    <section class="new_menu">
+        <div class="inner">
+            <h2>New Menu</h2>
+            <div class="main_new_menu">
+                <ul>
+                    <li><a href="#">메리 피스타치오 트리</a></li>
+                    <li><a href="#">허그 미! 스노우맨</a></li>
+                    <li><a href="#">나 홀로 산타 슈가베어</a></li>
+                    <li><a href="#">눈사람 스마일</a></li>
+                </ul>
+
+                <div class="swiper new_menu_main-Swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#"><img src="img/NEWmenu-img06.png" alt="main_new_menu img01"></a>
+                        </div><!-- .swiper-slide end -->
+                        <div class="swiper-slide">
+                            <a href="#"><img src="img/NEWmenu-img07.png" alt="main_new_menu img02"></a>
+                        </div><!-- .swiper-slide end -->
+                        <div class="swiper-slide">
+                            <a href="#"><img src="img/NEWmenu-img08.png" alt="main_new_menu img03"></a>
+                        </div><!-- .swiper-slide end -->
+                        <div class="swiper-slide">
+                            <a href="#"><img src="img/NEWmenu-img010.png" alt="main_new_menu img04"></a>
+                        </div><!-- .swiper-slide end -->
+                    </div><!-- .swiper-wrapper end -->
+                    <!-- <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div> -->
+                    <div class="swiper-pagination"></div>
+                </div><!-- .swiper end -->
+            </div><!-- .main_new_men end -->
+
+            <div class="sub_new_menu">
+                <div class="swiper new_menu_sub-Swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#"><img src="img/NEWmenu-img01.png" alt="sub_new_menu img01">
+                                <div class="text">체리 베리 크림 도넛</div>
+                            </a>
+                        </div><!-- .swiper-slide end -->
+                        <div class="swiper-slide">
+                            <a href="#"><img src="img/NEWmenu-img02.png" alt="sub_new_menu img02">
+                                <div class="text">체리 베리 크림 도넛</div>
+                            </a>
+                        </div><!-- .swiper-slide end -->
+                        <div class="swiper-slide">
+                            <a href="#"><img src="img/NEWmenu-img03.png" alt="sub_new_menu img03">
+                                <div class="text">하트 캔디 도넛</div>
+                            </a>
+                        </div><!-- .swiper-slide end -->
+                        <div class="swiper-slide">
+                            <a href="#"><img src="img/NEWmenu-img04.png" alt="sub_new_menu img04">
+                                <div class="text">핑크 리스 도넛</div>
+                            </a>
+                        </div><!-- .swiper-slide end -->
+                        <div class="swiper-slide">
+                            <a href="#"><img src="img/NEWmenu-img011.png" alt="sub_new_menu img05">
+                                <div class="text">스모어 스노우맨 도넛</div>
+                            </a>
+                        </div><!-- .swiper-slide end -->
+                        <div class="swiper-slide">
+                            <a href="#"><img src="img/NEWmenu-img012.png" alt="sub_new_menu img05">
+                                <div class="text">러블리 하트 파이</div>
+                            </a>
+                        </div><!-- .swiper-slide end -->
+                        <div class="swiper-slide">
+                            <a href="#"><img src="img/NEWmenu-img013.png" alt="sub_new_menu img05">
+                                <div class="text">솔티드 초코 크림 소금빵</div>
+                            </a>
+                        </div><!-- .swiper-slide end -->
+                        <div class="swiper-slide">
+                            <a href="#"><img src="img/NEWmenu-img014.png" alt="sub_new_menu img05">
+                                <div class="text">고구마 카스테라 <br> 크림 소금빵</div>
+                            </a>
+                        </div><!-- .swiper-slide end -->
+                        <div class="swiper-slide">
+                            <a href="#"><img src="img/NEWmenu-img015.png" alt="sub_new_menu img05">
+                                <div class="text">앙버터 소금빵</div>
+                            </a>
+                        </div><!-- .swiper-slide end -->
+                    </div><!-- .swiper-wrapper end -->
+                    <div class="swiper-pagination"></div>
+                </div><!-- .swiper end -->
+            </div><!-- .sub_new_menu end -->
+            <a href="#" class="btn">View More →</a>
+        </div><!-- .inner end -->
+    </section><!-- .new_menu end -->
+
+    <section class="knotted_menu">
+        <div class="inner">
+            <h2>Knotted's Menu</h2>
+            <div class="item item01">
+                <a href="#">
+                    <img src="img/best-img01.png" alt="best-img01">
+                    <div class="text">
+                        <h3>우유 생크림 도넛</h3>
+                        <p>노티드 시그니처 크림과<br>
+                            바닐라크림이 어우러진 노티드 대표 도넛</p>
+                    </div><!-- .text -->
+                </a>
+            </div><!-- .item end -->
+            <div class="item item02">
+                <a href="#">
+                    <img src="img/best-img02.png" alt="best-img02">
+                    <div class="text">
+                        <h3>클래식 바닐라 도넛</h3>
+                        <p>바닐라 빈이 가득 들어가 더욱 풍부한<br>
+                            바닐라의 맛을 느낄 수 있는 클래식 도넛</p>
+                    </div><!-- .text -->
+                </a>
+            </div><!-- .item end -->
+            <div class="item item03">
+                <a href="#">
+                    <img src="img/best-img05.png" alt="best-img01">
+                    <div class="text">
+                        <h3>옐로우 스마일</h3>
+                        <p>우유 생크림이 듬뿍 들어있는 부드러운 시트에<br>
+                            노란 노티드 스마일을 담아낸 케이크</p>
+                    </div><!-- .text -->
+                </a>
+            </div><!-- .item end -->
+            <a href="#" class="btn">View More →</a>
+        </div><!-- .inner end -->
+    </section><!-- .knotted_menu end -->
+
+    <section class="event">
+        <div class="inner">
+            <h2>Event</h2>
+            <div class="swiper event-Swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="#"><img src="img/event-img01.png" alt="event img01"></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#"><img src="img/event-img02.png" alt="event img01"></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#"><img src="img/event-img03.png" alt="event img01"></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#"><img src="img/event-img04.png" alt="event img01"></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#"><img src="img/event-img05.jpg" alt="event img01"></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#"><img src="img/event-img06.png" alt="event img01"></a>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div><!-- .inner end -->
+    </section><!-- .event end -->
+
+    <section class="brand_stroy">
+        <div class="inner">
+            <h2>Knotted’s Brand Story</h2>
+            <div class="text">
+                <h3>프리미엄 케이크, 도넛 , 디저트 카페</h3>
+                <p>노티드는 다양한 베이커리와 케이크, 도넛을 즐길 수 있는 디저트 카페입니다.<br>
+                    합리적인 가격에 프리미엄한 맛을 제공하고 노티드의 시그니처인 크림이 가득한 도넛과 귀여운 패키징으로<br>
+                    새로운 트렌드를 만들어 가며 모든 사람들에게 행복을 선사하고자 노력하고 있습니다.</p>
+            </div><!-- .text end -->
+            <a href="#" class="btn">Brand Story →</a>
+        </div><!-- .inner end -->
+    </section><!-- .brand_stroy end -->
+
+    <section class="insta">
+        <div class="inner">
+            <h2>Instagram</h2>
+            <div class="swiper insta-Swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="#"><img src="img/insta-img01.jpg" alt="insta-img01"></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#"><img src="img/insta-img02.jpg" alt="insta-img02"></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#"><img src="img/insta-img03.jpg" alt="insta-img03"></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#"><img src="img/insta-img04.jpg" alt="insta-img04"></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#"><img src="img/insta-img05.jpg" alt="insta-img05"></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#"><img src="img/insta-img06.jpg" alt="insta-img06"></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#"><img src="img/insta-img07.jpg" alt="insta-img06"></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#"><img src="img/insta-img08.jpg" alt="insta-img07"></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#"><img src="img/insta-img09.jpg" alt="insta-img08"></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#"><img src="img/insta-img010.jpg" alt="insta-img09"></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#"><img src="img/insta-img011.jpg" alt="insta-img010"></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#"><img src="img/insta-img012.jpg" alt="insta-img011"></a>
+                    </div>
+                </div>
+                <!-- <div class="swiper-pagination"></div> -->
+            </div>
+        </div>
+    </section><!-- .insta end -->
+
+    <footer>
+        <div class="inner">
+            <div class="text_wrap">
+                <div class="text text01">
+                    <h4>COMPANY INFORMATION</h4>
+                    <p>주식회사 지에프에프지</p>
+                    <p>서울특별시 강남구 도산대로 326</p>
+                    <p>사업자등록번호 : 248-81-00620</p>
+                    <p>통신판매업신고번호 : 2020-서울강남-02297</p>
+                    <p>대표이사 : 이준범</p>
+                </div><!-- .text end -->
+                <div class="text text02">
+                    <h4>HELP</h4>
+                    <p>고객센터 : 1800-6067</p>
+                    <p>운영시간 : 평일 9시~12시, 13시~17시 (주말/공휴일 제외)</p>
+                </div><!-- .text end -->
+                <div class="text text03">
+                    <h4>SOCIAL</h4>
+                    <a href="#">
+                        <img src="img/footer-icon-insta.png" alt="insta icon">
+                        <p>Instagram</p>
+                    </a>
+                    <a href="#">
+                        <img src="img/footer-icon-kakao.png" alt="kakao icon">
+                        <p>Kakaotalk Channel</p>
+                    </a>
+                </div><!-- .text end -->
+            </div><!-- .text_wrap end -->
+            <div class="service_text">
+                <p><a href="#">이용약관</a></p>
+                <p><a href="#">개인정보처리방침</a></p>
+                <p>Copyright © 2023 Knotted. All Rights Reserved.</p>
+            </div><!-- .service_text end -->
+            <div class="kakao_channel">
+                <div class="text">
+                    <h3>Kakaotalk Channel</h3>
+                    <p>카카오톡 체널을 통해<br>
+                        노티드의 신제품, 이벤트 소식을 받아보실 수 있습니다</p>
+                </div><!-- .text end -->
+                <a href="#" class="btn">채널 추가하기</a>
+            </div><!-- .kakao_channel end -->
+        </div><!-- .inner end -->
+    </footer>
+</body>
+
+</html>
