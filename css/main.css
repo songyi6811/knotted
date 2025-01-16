@@ -1308,3 +1308,189 @@ footer .inner .kakao_channel .btn:hover{
         font-size: 14px;
     }
 }
+
+@media screen and (max-width:414px){
+    h2{
+        font-size: 22px;
+        white-space: nowrap;
+    }
+    .header{
+        height: 60px;
+        margin-bottom: 0;
+    }
+    .header .inner .mobile_nav{
+        top: 60px;
+    }
+    .header .inner .mobile h1{
+        width: 100px;
+        height: 42px;
+    }
+    .header .inner .mobile .icon img{
+        width: 30px;
+        height: 30px;
+    }
+    .header .inner .mobile .menu_btn img{
+        width: 30px;
+        height: 30px;
+    }
+    .main_visual .swiper .swiper-slide img{
+        border-radius: 30px;
+    }
+    .new_menu .new_menu_main-Swiper{
+        padding: 60px 0;
+    }
+    .new_menu .sub_new_menu .swiper .swiper-slide{
+        border-radius: 50px;
+        height: 42vw;
+    }
+    .new_menu .sub_new_menu .swiper .swiper-slide img{
+        width: 40%;
+    }
+    .new_menu .sub_new_menu .swiper .swiper-slide .text{
+        font-size: 14px;
+    }
+    .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
+        top: 175px;
+    }
+    .new_menu .new_menu_main-Swiper .swiper-slide.swiper-slide-next img{
+        transform: scale(2);
+    }
+    .new_menu .new_menu_main-Swiper .swiper-slide.swiper-slide-next::after{
+        display: none;
+    }
+    .new_menu .main_new_menu .swiper-slide img{
+        transform: scale(1);
+    }
+    .new_menu .new_menu_main-Swiper .swiper-slide.swiper-slide-active img{
+        transform: scale(1);
+    }
+    .new_menu .inner .btn{
+        margin-top: 30px;
+        width: 180px;
+        height: 48px;
+        font-size: 14px;
+        text-align: center;
+        line-height: 48px;
+        font-weight: bold;
+    }
+
+    .knotted_menu{
+        height: 700px;
+        background: none;
+        background-color: #fff1a0;
+    }
+    .knotted_menu h2{
+        padding-top: 60px;
+        margin-bottom: 0;
+    }
+    .knotted_menu .inner .item a{
+        gap: 20px;
+    }
+    .knotted_menu .inner .item01{
+        top: 180px;
+        left: 48%;
+    }
+    .knotted_menu .inner .item02{
+        top: 300px;
+        left: 48%;
+    }
+    .knotted_menu .inner .item03{
+        top: 450px;
+    }
+    .knotted_menu .inner .item01 img{
+        width: 80px;
+        height: 75px;
+    }
+    .knotted_menu .inner .item02 img{
+        width: 78px;
+        height: 90px;
+    }
+    .knotted_menu .inner .item03 img{
+        width: 85px;
+        height: 78px;
+    }
+    .knotted_menu .inner .item a .text h3{
+        font-size: 18px;
+    }
+    .knotted_menu .inner .item a .text p{
+        font-size: 12px;
+    }
+    .knotted_menu .btn{
+        margin-top: 30px;
+        width: 180px;
+        height: 48px;
+        font-size: 14px;
+        text-align: center;
+        line-height: 48px;
+        font-weight: bold;
+        bottom: 60px;
+    }
+
+    .brand_stroy{
+        background: none;
+        position: relative;
+        height: 580px;
+        background-color: #ffc8e18f;
+    }
+    .brand_stroy .inner{
+        padding: 150px 0 30px;
+    }
+    .brand_stroy::before{
+        content: '';
+        background: url('../img/bg-img03.png') center center no-repeat;
+        width: 380px;
+        height: 250px;
+        display: block;
+        position: absolute;
+        top: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .brand_stroy .text p{
+        font-size: 14px;
+        white-space: normal;
+    }
+    .brand_stroy .text h3{
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    .brand_stroy .inner .btn{
+        margin-top: 30px;
+        width: 180px;
+        height: 48px;
+        font-size: 14px;
+        text-align: center;
+        line-height: 48px;
+        font-weight: bold;
+        bottom: 60px;
+    }
+
+
+    .insta .inner .swiper-slide{
+        border-radius: 20px;
+    }
+    .insta .inner .swiper-slide img{
+        border-radius: 10px;
+    }
+    footer{
+        width: 100%;
+
+        background: url('../img/모바일-푸터.png') center center no-repeat;
+    }
+    footer .inner .text_wrap{
+        padding-top: 50px;
+    }
+    footer .inner .text_wrap{
+        font-size: 12px;
+    }
+    footer .inner .service_text{
+        font-size: 10px;
+        white-space: nowrap;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+    footer .inner .kakao_channel{
+        display: none;
+    }
+    
+}
